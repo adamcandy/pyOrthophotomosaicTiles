@@ -97,7 +97,7 @@ grid()
     gridded="${folder}.${format}"
 
     if [ ! -e "$gridded" ]; then
-        imagemagick-fred-grid.sh -d "${gridwidth},${gridwidth}" -c red -s "${gridwidth}" -o 0.7 "$new" "${gridded}"
+        image-overlay-grid.sh -d "${gridwidth},${gridwidth}" -c red -s "${gridwidth}" -o 0.7 "$new" "${gridded}"
     fi
 }
 
@@ -128,7 +128,7 @@ main()
 
     formats="${source##*.}"
     if [ "${source##*.}" == "tif" ]; then
-        formats="jpg ${formats}"
+        formats="jpg png ${formats}"
     fi
     for format in $formats
     do    

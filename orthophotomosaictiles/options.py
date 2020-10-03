@@ -24,6 +24,7 @@ def getOptions():
 
 class Options:
     _default_outfolder = None
+    _default_suffix = 'png'
 
     def __init__(self):
         self.sources = []
@@ -44,6 +45,10 @@ class Options:
         self.show = False
 
         self.read()
+        self.validate()
+
+    def getOutput(self):
+        return self.data[0]
 
     def getVersion(self):
         from .version import __version__
@@ -115,6 +120,11 @@ class Options:
         if len(self.sources) == 0:
             raise OptionsError('No files provided')
 
+    def validate(self):
+        """ Check the provided options are valid """
+        if len(self.data) == 0:
+            raise OptionsError('No data file provided')
+        return True
 
         
 

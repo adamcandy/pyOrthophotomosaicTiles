@@ -12,7 +12,7 @@ signal(SIGTERM, signal_handler)
 
 
 def main():
-    from .options import checkOptions, getOutput
+    from .options import checkOptions
     from .log import loggingInit
     from .trap import isTrapped
     from .tile import Tile
@@ -24,7 +24,7 @@ def main():
     sources = []
     for i, filename in enumerate(options.sources):
         source = Tile(filename, scale=options.scale, length=options.length, height=options.height)
-        source.setOutputFilename(getOutput(source.filename))
+        source.setOutputFilename(options.getOutput(source.filename))
         sources.append(source)
 
     for source in sources:

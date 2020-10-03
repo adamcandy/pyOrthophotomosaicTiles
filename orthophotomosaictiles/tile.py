@@ -154,10 +154,10 @@ class Tile:
         i, j = (0,0)
         while j < self.getHeight():
             while i < self.getWidth():
-                print i, j
+                log.debug('Tiling indexes: {}, {}'.format(i, j))
                 tile = im.crop( (i, j, i + self.getWidth(), j + self.getHeight()) )
-                tile.save('{}x{}y{}.{}'.format(self._prefix, i, j, format.lower(), format)
-                i += getWidth()
+                tile.save('{}x{}y{}.{}'.format(self._prefix, i, j, format.lower(), format))
+                i += self.getWidth()
                 j += self.getHeight()
             i = 0
 
