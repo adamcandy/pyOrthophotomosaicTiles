@@ -7,7 +7,7 @@ with open("Readme.md", "r") as fh:
 
 setuptools.setup(
     name="orthophotomosaictiles",
-    version="0.0.3",
+    version="0.0.4",
     author="Adam Candy",
     author_email="adam@candylab.org",
     description="Project to create image tile sets for orthophotomosaics.",
